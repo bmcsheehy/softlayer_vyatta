@@ -23,7 +23,7 @@ my $ipsec_conf_file = '/etc/ipsec.conf';
 my $found = 0;
 
 unless (-e $ipsec_conf_file) {
-    die("unable to find $ipsec_conf_file");
+    die("$0 unable to find $ipsec_conf_file");
 }
 
 open my $fh, "$ipsec_conf_file" or die "$!";
@@ -37,10 +37,10 @@ close($fh);
 
 if($found == 0) { 
     open my $fhw, ">>$ipsec_conf_file" or die "$!";
-    print "adding ipsec directory configuration\n";
+    print "$0 adding ipsec directory configuration\n";
     print $fhw "include \/etc\/ipsec.d\/\*\n";
     close($fhw);
 }
 else {
-    print "ipsec directory include found - skipping\n";
+    print "$0 ipsec directory include found - skipping\n";
 }
