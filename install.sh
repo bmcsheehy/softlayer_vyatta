@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 #####################################################
+exec 1> >(logger -s -t $(basename $0)) 2>&1
 
 ADD_IPSEC_DIR_SRC="https://raw.githubusercontent.com/bmcsheehy/softlayer_vyatta/master/add_ipsec_conf"
 ADD_IPSEC_DIR_LOCAL="/opt/vyatta/sbin/add_ipsec_conf"
