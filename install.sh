@@ -24,7 +24,7 @@ echo "* checking for add_ipsec_conf"
 if [  ! -e $ADD_IPSEC_DIR_LOCAL ];
     then
         echo "* unable to find add_ipsec_conf, downloading"
-        curl -s -o $ADD_IPSEC_DIR_LOCAL $ADD_IPSEC_DIR_SRC
+        curl -s -o $ADD_IPSEC_DIR_LOCAL -k $ADD_IPSEC_DIR_SRC
         if [  ! -e $ADD_IPSEC_DIR_LOCAL ];
             then
                 "error: unable to download add_ipsec_conf"
